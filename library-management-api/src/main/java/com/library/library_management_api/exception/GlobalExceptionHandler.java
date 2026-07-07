@@ -9,4 +9,9 @@ public class GlobalExceptionHandler {
     public ResponseEntity<String> handleBookNotFoundException(BookNotFoundException ex) {
         return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);         
 }
+
+    @ExceptionHandler(BookUnavailableException.class)
+    public ResponseEntity<String> handleBookUnavailableException(BookUnavailableException ex) {
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
+    }
 }
