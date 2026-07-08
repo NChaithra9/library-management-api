@@ -1,18 +1,11 @@
 package com.library.library_management_api.controller;
-
 import com.library.library_management_api.entity.Member;
 import com.library.library_management_api.service.MemberService;
-
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
-
-
 @RestController
 @RequestMapping("/members")
 public class MemberController {
-
-
     private final MemberService memberService;
 
 
