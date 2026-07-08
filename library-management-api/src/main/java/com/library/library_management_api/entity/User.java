@@ -1,6 +1,7 @@
 package com.library.library_management_api.entity;
 import jakarta.persistence.*;
 @Entity
+@Table(name = "users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
