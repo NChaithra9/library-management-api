@@ -14,4 +14,13 @@ public class GlobalExceptionHandler {
     public ResponseEntity<String> handleBookUnavailableException(BookUnavailableException ex) {
         return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
     }
+    @ExceptionHandler(org.springframework.security.core.AuthenticationException.class)
+public ResponseEntity<?> handleAuthError(org.springframework.security.core.AuthenticationException ex) {
+    return ResponseEntity.status(401).body("Invalid username or password");
+}
+@ExceptionHandler(DuplicateResourceException.class)
+public ResponseEntity<String> handleDuplicateResourceException(DuplicateResourceException ex) {
+    return ResponseEntity.status(HttpStatus.CONFLICT).body(ex.getMessage());
+}
+
 }
